@@ -20,8 +20,7 @@ async function init() {
 }
 document.addEventListener("DOMContentLoaded", init);
 
-cancelBtn.onclick = function (e) {
-    e.preventDefault();
+cancelBtn.onclick = function () {
     window.location = `manage-cards.html?deckId=${deckId}`;
 }
 

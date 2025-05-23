@@ -8,8 +8,7 @@ let answerInput = document.getElementById("answer");
 let form = document.getElementById("create-card-form");
 let cancelBtn = document.getElementById("cancel-btn");
 
-cancelBtn.onclick = function (e) {
-    e.preventDefault();
+cancelBtn.onclick = function () {
     window.location = `manage-cards.html?deckId=${deckId}`;
 }
 

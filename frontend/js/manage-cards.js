@@ -7,8 +7,6 @@ let deckTitle = document.getElementById("deck-title");
 let createBtn = document.getElementById("create-card-btn");
 let tableBody = document.querySelector("#cards-table tbody");
 
-createBtn.href = `create-card.html?deckId=${deckId}`;
-
 async function displayCards() {
     try {
         var deck = await getDeck(deckId);
@@ -80,6 +78,10 @@ function addButtons(row) {
     };
 
     row.appendChild(buttonCell);
+}
+
+createBtn.onclick = function () {
+    window.location = `create-card.html?deckId=${deckId}`;
 }
 
 backBtn.onclick = function () {

@@ -10,8 +10,7 @@
     <div class="container py-4">
         <h1 class="mb-4">Flashy</h1>
     
-        <!-- Create Deck Form -->
-        <form id="create-deck-form" class="mb-3 row g-2">
+        <form id="create-deck-form" class="mb-3 row">
           <div class="col-auto">
             <input type="text" id="new-deck-name" class="form-control" placeholder="Enter name of new deck" required>
           </div>
@@ -20,16 +19,15 @@
           </div>
         </form>
     
-        <!-- Decks Table -->
         <table class="table table-striped" id="decks-table">
           <thead>
             <tr>
-              <th scope="col">Deck Name</th>
-              <th scope="col" style="width: 200px;">Actions</th>
+              <th>Deck Name</th>
+              <th style="width: 200px;">Actions</th>
             </tr>
           </thead>
           <tbody>
-            <!-- JS injected rows -->
+            <!-- Retreived decks -->
           </tbody>
         </table>
     </div>

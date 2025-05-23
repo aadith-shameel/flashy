@@ -22,7 +22,7 @@ async function init() {
         alert('Error: Unable to get deck details');
         return;
     }
-    deckTitle.textContent = `Review ${deck.name}`;
+    deckTitle.textContent = `Reviewing: ${deck.name}`;
     
     try {
         cards = await getCardsInDeck(deckId);
