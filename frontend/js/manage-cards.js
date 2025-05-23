@@ -1,11 +1,11 @@
 import { getDeck, getCardsInDeck, deleteCard } from "./api.js";
 
-var params = new URLSearchParams(window.location.search);
-var deckId = params.get("deckId");
-var backBtn = document.getElementById("back-btn");
-var deckTitle = document.getElementById("deck-title");
-var createBtn = document.getElementById("create-card-btn");
-var tableBody = document.querySelector("#cards-table tbody");
+let params = new URLSearchParams(window.location.search);
+let deckId = params.get("deckId");
+let backBtn = document.getElementById("back-btn");
+let deckTitle = document.getElementById("deck-title");
+let createBtn = document.getElementById("create-card-btn");
+let tableBody = document.querySelector("#cards-table tbody");
 
 createBtn.href = `create-card.html?deckId=${deckId}`;
 
@@ -24,20 +24,20 @@ async function displayCards() {
     }
     tableBody.innerHTML = "";
 
-    for (var i = 0; i < cards.length; i++) {
-        var c = cards[i];
-        var row = document.createElement("tr");
+    for (let i = 0; i < cards.length; i++) {
+        let c = cards[i];
+        let row = document.createElement("tr");
         row.setAttribute("data-id", c.cardId);
 
-        var idCell = document.createElement("td");
+        let idCell = document.createElement("td");
         idCell.textContent = c.cardId;
         row.appendChild(idCell);
 
-        var qCell = document.createElement("td");
+        let qCell = document.createElement("td");
         qCell.textContent = c.question;
         row.appendChild(qCell);
 
-        var aCell = document.createElement("td");
+        let aCell = document.createElement("td");
         aCell.textContent = c.answer;
         row.appendChild(aCell);
 
@@ -48,7 +48,7 @@ async function displayCards() {
 }
 
 function addButtons(row) {
-    var buttonCell = document.createElement("td");
+    let buttonCell = document.createElement("td");
 
     buttonCell.innerHTML =
         `
@@ -60,15 +60,15 @@ function addButtons(row) {
         </button>
     `;
 
-    var updateBtn = buttonCell.querySelector(".update-btn");
+    let updateBtn = buttonCell.querySelector(".update-btn");
     updateBtn.onclick = function () {
-        var cardId = row.getAttribute('data-id');
+        let cardId = row.getAttribute('data-id');
         window.location = `update-card.html?deckId=${deckId}&cardId=${cardId}`;
     };
 
-    var deleteBtn = buttonCell.querySelector(".delete-btn");
+    let deleteBtn = buttonCell.querySelector(".delete-btn");
     deleteBtn.onclick = async function () {
-        var cardId = row.getAttribute('data-id');
+        let cardId = row.getAttribute('data-id');
         if (confirm("Delete this card?")) {
             try {
                 await deleteCard(cardId);

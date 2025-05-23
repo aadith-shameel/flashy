@@ -1,12 +1,12 @@
 import { createCard } from "./api.js";
 
-var params = new URLSearchParams(window.location.search);
-var deckId = params.get("deckId");
+let params = new URLSearchParams(window.location.search);
+let deckId = params.get("deckId");
 
-var questionInput = document.getElementById("question");
-var answerInput = document.getElementById("answer");
-var form = document.getElementById("create-card-form");
-var cancelBtn = document.getElementById("cancel-btn");
+let questionInput = document.getElementById("question");
+let answerInput = document.getElementById("answer");
+let form = document.getElementById("create-card-form");
+let cancelBtn = document.getElementById("cancel-btn");
 
 cancelBtn.onclick = function (e) {
     e.preventDefault();
@@ -15,8 +15,8 @@ cancelBtn.onclick = function (e) {
 
 form.onsubmit = async function (e) {
     e.preventDefault();
-    var q = questionInput.value.trim();
-    var a = answerInput.value.trim();
+    let q = questionInput.value.trim();
+    let a = answerInput.value.trim();
     if (!q || !a) {
         alert('Please fill in both the question and answer fields');
         return;

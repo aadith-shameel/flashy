@@ -1,19 +1,19 @@
 import { getDeck, getCardsInDeck } from './api.js';
 
-var params = new URLSearchParams(window.location.search);
-var deckId = params.get('deckId');
+let params = new URLSearchParams(window.location.search);
+let deckId = params.get('deckId');
 
-var backBtn = document.getElementById('back-btn');
-var deckTitle = document.getElementById('deck-title');
-var prevBtn = document.getElementById('prev-btn');
-var nextBtn = document.getElementById('next-btn');
-var cardNumber = document.getElementById('card-number');
-var question = document.getElementById('question');
-var answer = document.getElementById('answer');
-var toggleBtn = document.getElementById('toggle-btn');
+let backBtn = document.getElementById('back-btn');
+let deckTitle = document.getElementById('deck-title');
+let prevBtn = document.getElementById('prev-btn');
+let nextBtn = document.getElementById('next-btn');
+let cardNumber = document.getElementById('card-number');
+let question = document.getElementById('question');
+let answer = document.getElementById('answer');
+let toggleBtn = document.getElementById('toggle-btn');
 
-var cards = [];
-var index = 0;
+let cards = [];
+let index = 0;
 
 async function init() {
     try {
@@ -41,7 +41,7 @@ async function init() {
 }
 
 async function showCard() {
-    var card = cards[index];
+    let card = cards[index];
     question.textContent = card.question;
     answer.textContent = card.answer;
     answer.style.display = "none";

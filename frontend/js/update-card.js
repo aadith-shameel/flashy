@@ -1,13 +1,13 @@
 import { getCard, updateCard } from "./api.js";
 
-var params = new URLSearchParams(window.location.search);
-var deckId = params.get("deckId");
-var cardId = params.get("cardId");
+let params = new URLSearchParams(window.location.search);
+let deckId = params.get("deckId");
+let cardId = params.get("cardId");
 
-var questionInput = document.getElementById("question");
-var answerInput = document.getElementById("answer");
-var form = document.getElementById("update-card-form");
-var cancelBtn = document.getElementById("cancel-btn");
+let questionInput = document.getElementById("question");
+let answerInput = document.getElementById("answer");
+let form = document.getElementById("update-card-form");
+let cancelBtn = document.getElementById("cancel-btn");
 
 async function init() {
     try {
@@ -27,8 +27,8 @@ cancelBtn.onclick = function (e) {
 
 form.onsubmit = async function (e) {
     e.preventDefault();
-    var q = questionInput.value.trim();
-    var a = answerInput.value.trim();
+    let q = questionInput.value.trim();
+    let a = answerInput.value.trim();
     if (!q || !a) {
         alert("Please fill in both fields");
         return;
