@@ -10,8 +10,7 @@ import java.util.Objects;
 public class Deck {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DECK_ID_GEN")
-    @SequenceGenerator(name = "DECK_ID_GEN")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "DECK_ID")
     private Long deckId;
 

@@ -9,8 +9,7 @@ import java.util.Objects;
 public class Card {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CARD_ID_GEN")
-    @SequenceGenerator(name = "CARD_ID_GEN")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CARD_ID")
     private Long cardId;
 
